@@ -30,10 +30,10 @@ void obtainFilePath(char* inputFile, char* outputFile, uint16_t maxSize){
 Simply checks if the given is a valid opcode. if so return truw, otherwise return false
  */
 bool isOpcode(const char* inputString){
-    char *opCodes[NUM_OPCODES] = {"add", "and", "or", "xor", "ldb", "ldw", "ldi", "lea",
-    "stb", "stw", "sti", "br", "brn", "brnz", "brnp", "brnzp", "brzp", "brz", "brp", "jmp",
+    char *opCodes[NUM_OPCODES] = {"add", "and", "or", "xor", "ldb", "ldw", "ldi", "ldib", "lea",
+    "stb", "stw", "sti", "stib", "br", "brn", "brnz", "brnp", "brnzp", "brzp", "brz", "brp", "jmp",
     "jsr", "jsrr", "ret", "rti", "mul", "div", "trap", "lshf", "rshfl", "rshfa", "mov", "rot",
-    "push", "pop", "macc", "extdb", "extdw", "halt", ".fill", ".blkw", ".stringz", ".end", ".orig"};
+    "push", "pushb", "pop", "popb", "macc", "extdb", "extdw", "halt", ".fill", ".blkw", ".stringz", ".end", ".orig"};
 
     for (int i = 0; i < NUM_OPCODES; i++){
         if (strcmp(inputString, opCodes[i]) == 0){
@@ -48,10 +48,10 @@ bool isOpcode(const char* inputString){
 simple function that checks which case the opcode was. Returns that index in the array.
  */
 int findOpcode(const char* inputString){
-  char *opCodes[NUM_OPCODES] = {"add", "and", "or", "xor", "ldb", "ldw", "ldi", "lea",
-    "stb", "stw", "sti", "br", "brn", "brnz", "brnp", "brnzp", "brzp", "brz", "brp", "jmp",
+  char *opCodes[NUM_OPCODES] = {"add", "and", "or", "xor", "ldb", "ldw", "ldi", "ldib", "lea",
+    "stb", "stw", "sti", "stib", "br", "brn", "brnz", "brnp", "brnzp", "brzp", "brz", "brp", "jmp",
     "jsr", "jsrr", "ret", "rti", "mul", "div", "trap", "lshf", "rshfl", "rshfa", "mov", "rot",
-    "push", "pop", "macc", "extdb", "extdw", "halt",".fill", ".blkw", ".stringz", ".end", ".orig"};
+    "push", "pushb", "pop", "popb", "macc", "extdb", "extdw", "halt",".fill", ".blkw", ".stringz", ".end", ".orig"};
   int i = 0;
     for (i; i < NUM_OPCODES; ++i){
         if (strcmp(inputString, opCodes[i]) == 0){

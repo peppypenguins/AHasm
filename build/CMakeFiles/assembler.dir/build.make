@@ -52,10 +52,10 @@ RM = C:\Users\adamk\OneDrive\Documents\mingw64\bin\cmake.exe -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\adamk\projects\AHasm
+CMAKE_SOURCE_DIR = C:\Users\adamk\OneDrive\Documents\GitHub\AHasm
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\adamk\projects\AHasm\build
+CMAKE_BINARY_DIR = C:\Users\adamk\OneDrive\Documents\GitHub\AHasm\build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/assembler.dir/depend.make
@@ -70,63 +70,63 @@ include CMakeFiles/assembler.dir/flags.make
 
 CMakeFiles/assembler.dir/src/main.c.obj: CMakeFiles/assembler.dir/flags.make
 CMakeFiles/assembler.dir/src/main.c.obj: CMakeFiles/assembler.dir/includes_C.rsp
-CMakeFiles/assembler.dir/src/main.c.obj: C:/Users/adamk/projects/AHasm/src/main.c
+CMakeFiles/assembler.dir/src/main.c.obj: C:/Users/adamk/OneDrive/Documents/GitHub/AHasm/src/main.c
 CMakeFiles/assembler.dir/src/main.c.obj: CMakeFiles/assembler.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\adamk\projects\AHasm\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/assembler.dir/src/main.c.obj"
-	C:\msys64\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/assembler.dir/src/main.c.obj -MF CMakeFiles\assembler.dir\src\main.c.obj.d -o CMakeFiles\assembler.dir\src\main.c.obj -c C:\Users\adamk\projects\AHasm\src\main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\adamk\OneDrive\Documents\GitHub\AHasm\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/assembler.dir/src/main.c.obj"
+	C:\msys64\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/assembler.dir/src/main.c.obj -MF CMakeFiles\assembler.dir\src\main.c.obj.d -o CMakeFiles\assembler.dir\src\main.c.obj -c C:\Users\adamk\OneDrive\Documents\GitHub\AHasm\src\main.c
 
 CMakeFiles/assembler.dir/src/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/assembler.dir/src/main.c.i"
-	C:\msys64\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\adamk\projects\AHasm\src\main.c > CMakeFiles\assembler.dir\src\main.c.i
+	C:\msys64\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\adamk\OneDrive\Documents\GitHub\AHasm\src\main.c > CMakeFiles\assembler.dir\src\main.c.i
 
 CMakeFiles/assembler.dir/src/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/assembler.dir/src/main.c.s"
-	C:\msys64\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\adamk\projects\AHasm\src\main.c -o CMakeFiles\assembler.dir\src\main.c.s
+	C:\msys64\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\adamk\OneDrive\Documents\GitHub\AHasm\src\main.c -o CMakeFiles\assembler.dir\src\main.c.s
 
 CMakeFiles/assembler.dir/src/fileFunctions.c.obj: CMakeFiles/assembler.dir/flags.make
 CMakeFiles/assembler.dir/src/fileFunctions.c.obj: CMakeFiles/assembler.dir/includes_C.rsp
-CMakeFiles/assembler.dir/src/fileFunctions.c.obj: C:/Users/adamk/projects/AHasm/src/fileFunctions.c
+CMakeFiles/assembler.dir/src/fileFunctions.c.obj: C:/Users/adamk/OneDrive/Documents/GitHub/AHasm/src/fileFunctions.c
 CMakeFiles/assembler.dir/src/fileFunctions.c.obj: CMakeFiles/assembler.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\adamk\projects\AHasm\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/assembler.dir/src/fileFunctions.c.obj"
-	C:\msys64\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/assembler.dir/src/fileFunctions.c.obj -MF CMakeFiles\assembler.dir\src\fileFunctions.c.obj.d -o CMakeFiles\assembler.dir\src\fileFunctions.c.obj -c C:\Users\adamk\projects\AHasm\src\fileFunctions.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\adamk\OneDrive\Documents\GitHub\AHasm\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/assembler.dir/src/fileFunctions.c.obj"
+	C:\msys64\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/assembler.dir/src/fileFunctions.c.obj -MF CMakeFiles\assembler.dir\src\fileFunctions.c.obj.d -o CMakeFiles\assembler.dir\src\fileFunctions.c.obj -c C:\Users\adamk\OneDrive\Documents\GitHub\AHasm\src\fileFunctions.c
 
 CMakeFiles/assembler.dir/src/fileFunctions.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/assembler.dir/src/fileFunctions.c.i"
-	C:\msys64\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\adamk\projects\AHasm\src\fileFunctions.c > CMakeFiles\assembler.dir\src\fileFunctions.c.i
+	C:\msys64\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\adamk\OneDrive\Documents\GitHub\AHasm\src\fileFunctions.c > CMakeFiles\assembler.dir\src\fileFunctions.c.i
 
 CMakeFiles/assembler.dir/src/fileFunctions.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/assembler.dir/src/fileFunctions.c.s"
-	C:\msys64\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\adamk\projects\AHasm\src\fileFunctions.c -o CMakeFiles\assembler.dir\src\fileFunctions.c.s
+	C:\msys64\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\adamk\OneDrive\Documents\GitHub\AHasm\src\fileFunctions.c -o CMakeFiles\assembler.dir\src\fileFunctions.c.s
 
 CMakeFiles/assembler.dir/src/assembler.c.obj: CMakeFiles/assembler.dir/flags.make
 CMakeFiles/assembler.dir/src/assembler.c.obj: CMakeFiles/assembler.dir/includes_C.rsp
-CMakeFiles/assembler.dir/src/assembler.c.obj: C:/Users/adamk/projects/AHasm/src/assembler.c
+CMakeFiles/assembler.dir/src/assembler.c.obj: C:/Users/adamk/OneDrive/Documents/GitHub/AHasm/src/assembler.c
 CMakeFiles/assembler.dir/src/assembler.c.obj: CMakeFiles/assembler.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\adamk\projects\AHasm\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/assembler.dir/src/assembler.c.obj"
-	C:\msys64\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/assembler.dir/src/assembler.c.obj -MF CMakeFiles\assembler.dir\src\assembler.c.obj.d -o CMakeFiles\assembler.dir\src\assembler.c.obj -c C:\Users\adamk\projects\AHasm\src\assembler.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\adamk\OneDrive\Documents\GitHub\AHasm\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/assembler.dir/src/assembler.c.obj"
+	C:\msys64\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/assembler.dir/src/assembler.c.obj -MF CMakeFiles\assembler.dir\src\assembler.c.obj.d -o CMakeFiles\assembler.dir\src\assembler.c.obj -c C:\Users\adamk\OneDrive\Documents\GitHub\AHasm\src\assembler.c
 
 CMakeFiles/assembler.dir/src/assembler.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/assembler.dir/src/assembler.c.i"
-	C:\msys64\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\adamk\projects\AHasm\src\assembler.c > CMakeFiles\assembler.dir\src\assembler.c.i
+	C:\msys64\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\adamk\OneDrive\Documents\GitHub\AHasm\src\assembler.c > CMakeFiles\assembler.dir\src\assembler.c.i
 
 CMakeFiles/assembler.dir/src/assembler.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/assembler.dir/src/assembler.c.s"
-	C:\msys64\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\adamk\projects\AHasm\src\assembler.c -o CMakeFiles\assembler.dir\src\assembler.c.s
+	C:\msys64\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\adamk\OneDrive\Documents\GitHub\AHasm\src\assembler.c -o CMakeFiles\assembler.dir\src\assembler.c.s
 
 CMakeFiles/assembler.dir/src/ht.c.obj: CMakeFiles/assembler.dir/flags.make
 CMakeFiles/assembler.dir/src/ht.c.obj: CMakeFiles/assembler.dir/includes_C.rsp
-CMakeFiles/assembler.dir/src/ht.c.obj: C:/Users/adamk/projects/AHasm/src/ht.c
+CMakeFiles/assembler.dir/src/ht.c.obj: C:/Users/adamk/OneDrive/Documents/GitHub/AHasm/src/ht.c
 CMakeFiles/assembler.dir/src/ht.c.obj: CMakeFiles/assembler.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\adamk\projects\AHasm\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/assembler.dir/src/ht.c.obj"
-	C:\msys64\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/assembler.dir/src/ht.c.obj -MF CMakeFiles\assembler.dir\src\ht.c.obj.d -o CMakeFiles\assembler.dir\src\ht.c.obj -c C:\Users\adamk\projects\AHasm\src\ht.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\adamk\OneDrive\Documents\GitHub\AHasm\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/assembler.dir/src/ht.c.obj"
+	C:\msys64\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/assembler.dir/src/ht.c.obj -MF CMakeFiles\assembler.dir\src\ht.c.obj.d -o CMakeFiles\assembler.dir\src\ht.c.obj -c C:\Users\adamk\OneDrive\Documents\GitHub\AHasm\src\ht.c
 
 CMakeFiles/assembler.dir/src/ht.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/assembler.dir/src/ht.c.i"
-	C:\msys64\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\adamk\projects\AHasm\src\ht.c > CMakeFiles\assembler.dir\src\ht.c.i
+	C:\msys64\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\adamk\OneDrive\Documents\GitHub\AHasm\src\ht.c > CMakeFiles\assembler.dir\src\ht.c.i
 
 CMakeFiles/assembler.dir/src/ht.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/assembler.dir/src/ht.c.s"
-	C:\msys64\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\adamk\projects\AHasm\src\ht.c -o CMakeFiles\assembler.dir\src\ht.c.s
+	C:\msys64\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\adamk\OneDrive\Documents\GitHub\AHasm\src\ht.c -o CMakeFiles\assembler.dir\src\ht.c.s
 
 # Object files for target assembler
 assembler_OBJECTS = \
@@ -146,7 +146,7 @@ bin/assembler.exe: CMakeFiles/assembler.dir/build.make
 bin/assembler.exe: CMakeFiles/assembler.dir/linkLibs.rsp
 bin/assembler.exe: CMakeFiles/assembler.dir/objects1.rsp
 bin/assembler.exe: CMakeFiles/assembler.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\adamk\projects\AHasm\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C executable bin\assembler.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\adamk\OneDrive\Documents\GitHub\AHasm\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C executable bin\assembler.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\assembler.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -158,6 +158,6 @@ CMakeFiles/assembler.dir/clean:
 .PHONY : CMakeFiles/assembler.dir/clean
 
 CMakeFiles/assembler.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\adamk\projects\AHasm C:\Users\adamk\projects\AHasm C:\Users\adamk\projects\AHasm\build C:\Users\adamk\projects\AHasm\build C:\Users\adamk\projects\AHasm\build\CMakeFiles\assembler.dir\DependInfo.cmake "--color=$(COLOR)"
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\adamk\OneDrive\Documents\GitHub\AHasm C:\Users\adamk\OneDrive\Documents\GitHub\AHasm C:\Users\adamk\OneDrive\Documents\GitHub\AHasm\build C:\Users\adamk\OneDrive\Documents\GitHub\AHasm\build C:\Users\adamk\OneDrive\Documents\GitHub\AHasm\build\CMakeFiles\assembler.dir\DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/assembler.dir/depend
 

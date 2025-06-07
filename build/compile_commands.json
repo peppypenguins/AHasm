@@ -1,26 +1,26 @@
 [
 {
-  "directory": "C:/Users/adamk/projects/AHasm/build",
-  "command": "C:\\msys64\\mingw64\\bin\\gcc.exe  @CMakeFiles/assembler.dir/includes_C.rsp -g -std=gnu11 -o CMakeFiles\\assembler.dir\\src\\main.c.obj -c C:\\Users\\adamk\\projects\\AHasm\\src\\main.c",
-  "file": "C:/Users/adamk/projects/AHasm/src/main.c",
+  "directory": "C:/Users/adamk/OneDrive/Documents/GitHub/AHasm/build",
+  "command": "C:\\msys64\\mingw64\\bin\\gcc.exe  @CMakeFiles/assembler.dir/includes_C.rsp -g -std=gnu11 -o CMakeFiles\\assembler.dir\\src\\main.c.obj -c C:\\Users\\adamk\\OneDrive\\Documents\\GitHub\\AHasm\\src\\main.c",
+  "file": "C:/Users/adamk/OneDrive/Documents/GitHub/AHasm/src/main.c",
   "output": "CMakeFiles/assembler.dir/src/main.c.obj"
 },
 {
-  "directory": "C:/Users/adamk/projects/AHasm/build",
-  "command": "C:\\msys64\\mingw64\\bin\\gcc.exe  @CMakeFiles/assembler.dir/includes_C.rsp -g -std=gnu11 -o CMakeFiles\\assembler.dir\\src\\fileFunctions.c.obj -c C:\\Users\\adamk\\projects\\AHasm\\src\\fileFunctions.c",
-  "file": "C:/Users/adamk/projects/AHasm/src/fileFunctions.c",
+  "directory": "C:/Users/adamk/OneDrive/Documents/GitHub/AHasm/build",
+  "command": "C:\\msys64\\mingw64\\bin\\gcc.exe  @CMakeFiles/assembler.dir/includes_C.rsp -g -std=gnu11 -o CMakeFiles\\assembler.dir\\src\\fileFunctions.c.obj -c C:\\Users\\adamk\\OneDrive\\Documents\\GitHub\\AHasm\\src\\fileFunctions.c",
+  "file": "C:/Users/adamk/OneDrive/Documents/GitHub/AHasm/src/fileFunctions.c",
   "output": "CMakeFiles/assembler.dir/src/fileFunctions.c.obj"
 },
 {
-  "directory": "C:/Users/adamk/projects/AHasm/build",
-  "command": "C:\\msys64\\mingw64\\bin\\gcc.exe  @CMakeFiles/assembler.dir/includes_C.rsp -g -std=gnu11 -o CMakeFiles\\assembler.dir\\src\\assembler.c.obj -c C:\\Users\\adamk\\projects\\AHasm\\src\\assembler.c",
-  "file": "C:/Users/adamk/projects/AHasm/src/assembler.c",
+  "directory": "C:/Users/adamk/OneDrive/Documents/GitHub/AHasm/build",
+  "command": "C:\\msys64\\mingw64\\bin\\gcc.exe  @CMakeFiles/assembler.dir/includes_C.rsp -g -std=gnu11 -o CMakeFiles\\assembler.dir\\src\\assembler.c.obj -c C:\\Users\\adamk\\OneDrive\\Documents\\GitHub\\AHasm\\src\\assembler.c",
+  "file": "C:/Users/adamk/OneDrive/Documents/GitHub/AHasm/src/assembler.c",
   "output": "CMakeFiles/assembler.dir/src/assembler.c.obj"
 },
 {
-  "directory": "C:/Users/adamk/projects/AHasm/build",
-  "command": "C:\\msys64\\mingw64\\bin\\gcc.exe  @CMakeFiles/assembler.dir/includes_C.rsp -g -std=gnu11 -o CMakeFiles\\assembler.dir\\src\\ht.c.obj -c C:\\Users\\adamk\\projects\\AHasm\\src\\ht.c",
-  "file": "C:/Users/adamk/projects/AHasm/src/ht.c",
+  "directory": "C:/Users/adamk/OneDrive/Documents/GitHub/AHasm/build",
+  "command": "C:\\msys64\\mingw64\\bin\\gcc.exe  @CMakeFiles/assembler.dir/includes_C.rsp -g -std=gnu11 -o CMakeFiles\\assembler.dir\\src\\ht.c.obj -c C:\\Users\\adamk\\OneDrive\\Documents\\GitHub\\AHasm\\src\\ht.c",
+  "file": "C:/Users/adamk/OneDrive/Documents/GitHub/AHasm/src/ht.c",
   "output": "CMakeFiles/assembler.dir/src/ht.c.obj"
 }
 ]

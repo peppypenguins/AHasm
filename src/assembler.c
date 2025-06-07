@@ -12,10 +12,12 @@ char* xor(char* pArg1, char* pArg2, char* pArg3);
 char* ldb(char* pArg1, char* pArg2, char* pArg3);
 char* ldw(char* pArg1, char* pArg2, char* pArg3);
 char* ldi(char* pArg1, char* pArg2, ht* table, int location);
+char* ldib(char* pArg1, char* pArg2, ht* table, int location);
 char* lea(char* pArg1, char* pArg2, ht* table, int location);
 char* stb(char* pArg1, char* pArg2, char* pArg3);
 char* stw(char* pArg1, char* pArg2, char* pArg3);
 char* sti(char* pArg1, char* pArg2,ht* table, int location);
+char* stib(char* pArg1, char* pArg2,ht* table, int location);
 char* br(uint8_t brID, char* pArg1, ht* table, int location);
 char* jmp(char* pArg1);
 char* jsr(char* pArg1, ht* table, int location);
@@ -31,7 +33,9 @@ char* rshfa(char* pArg1, char* pArg2, char* pArg3);
 char* mov(char* pArg1, char* pArg2);
 char* rot(char* pArg1, char* pArg2, char* pArg3);
 char* push(char* pArg1);
+char* pushb(char* pArg1);
 char* pop(char* pArg1);
+char* popb(char* pArg1);
 char* macc(char* pArg1, char* pArg2, char* pArg3, char* pArg4);
 char* extdb(char* pArg1, char* pArg2, char* pArg3);
 char* extdw(char* pArg1, char* pArg2, char* pArg3);
@@ -239,6 +243,8 @@ FILE** output, ht* table, int* offset, int location){
             break;
         case LDI: return ldi(pArg1, pArg2, table,location);
             break;
+        case LDIB: return ldib(pArg1, pArg2, table, location);
+            break;
         case LEA: return lea(pArg1, pArg2, table, location);
             break;
         case STB: return stb(pArg1, pArg2, pArg3);
@@ -246,6 +252,8 @@ FILE** output, ht* table, int* offset, int location){
         case STW: return stw(pArg1, pArg2, pArg3);
             break;
         case STI: return sti(pArg1, pArg2, table, location);
+            break;
+        case STIB: return stib(pArg1, pArg2, table, location);
             break;
         case BR: return br(0, pArg1, table, location);
             break;
@@ -291,7 +299,11 @@ FILE** output, ht* table, int* offset, int location){
             break;
         case PUSH: return push(pArg1);
             break;
+        case PUSHB: return pushb(pArg1);
+            break;
         case POP: return pop(pArg1);
+            break;
+        case POPB: return popb(pArg1);
             break;
         case MACC: return macc(pArg1, pArg2, pArg3, pArg4);
             break;
@@ -559,6 +571,34 @@ return strResult;
 }
 
 /*
+The ldi function, this function handles the ldib opcode
+*/
+char* ldib(char* pArg1, char* pArg2, ht* table, int location){
+    char* strResult = (char*)malloc((sizeof(char) * 7));
+    strcpy(strResult, "0xD800");
+
+    checkRegValid(pArg1);
+    uint8_t dig2 = pArg1[1] - '0';
+    int16_t* labelVal = ((int16_t*)ht_get(table, pArg2));
+    if (labelVal == NULL){
+        printf("Label %s not found, terminating...", pArg2);
+        ht_destroy(table);
+        exit(3);
+    }
+    
+    uint16_t offset = (*labelVal - (location)) / 2;
+    checkConstantValid(offset,127, -128);
+    uint8_t dig3 = (uint8_t)((offset >> 4) & 0xF);
+    uint8_t dig4 = (uint8_t)(offset & 0x0F);
+
+    strResult[3] = toHexString(dig2);
+    strResult[4] = toHexString(dig3);
+    strResult[5] = toHexString(dig4);
+
+return strResult;
+}
+
+/*
 The lea function, this function handles the lea opcode
 */
 char* lea(char* pArg1, char* pArg2, ht* table, int location){
@@ -637,6 +677,33 @@ The sti function, this function handles the sti opcode
 char* sti(char* pArg1, char* pArg2, ht* table, int location){
     char* strResult = (char*)malloc((sizeof(char) * 7));
     strcpy(strResult, "0x8000");
+
+    checkRegValid(pArg1);
+    uint8_t dig2 = (pArg1[1] - '0') + 8;
+    int16_t* labelVal = ((int16_t*)ht_get(table, pArg2));
+    if (labelVal == NULL){
+        printf("Label %s not found, terminating...", pArg2);
+        ht_destroy(table);
+        exit(3);
+    }
+    int16_t offset = (*labelVal - (location)) / 2;
+    checkConstantValid(offset,127, -128);
+    uint8_t dig3 = (uint8_t)((offset >> 4) & 0xF);
+    uint8_t dig4 = (uint8_t)(offset & 0x0F);
+
+    strResult[3] = toHexString(dig2);
+    strResult[4] = toHexString(dig3);
+    strResult[5] = toHexString(dig4);
+
+return strResult;
+}
+
+/*
+The stib function, this function handles the stib opcode
+*/
+char* stib(char* pArg1, char* pArg2, ht* table, int location){
+    char* strResult = (char*)malloc((sizeof(char) * 7));
+    strcpy(strResult, "0xE000");
 
     checkRegValid(pArg1);
     uint8_t dig2 = (pArg1[1] - '0') + 8;
@@ -956,11 +1023,39 @@ return strResult;
 }
 
 /*
+The pushb instruction. This function handles the stack push byte opcode.
+*/
+char* pushb(char* pArg1){
+    char* strResult = (char*)malloc((sizeof(char) * 7));
+    strcpy(strResult, "0xB080");
+
+    checkRegValid(pArg1);
+    uint8_t dig2 = (pArg1[1] - '0');
+    strResult[3] = toHexString(dig2);
+
+return strResult;
+}
+
+/*
 The pop function. This function handles the pop stack opcode
 */
 char* pop(char* pArg1){
     char* strResult = (char*)malloc((sizeof(char) * 7));
     strcpy(strResult, "0xB000");
+
+    checkRegValid(pArg1);
+    uint8_t dig2 = (pArg1[1] - '0') + 8;
+    strResult[3] = toHexString(dig2);
+
+return strResult;
+}
+
+/*
+The popb function. This function handles the pop byte stack opcode
+*/
+char* popb(char* pArg1){
+    char* strResult = (char*)malloc((sizeof(char) * 7));
+    strcpy(strResult, "0xB080");
 
     checkRegValid(pArg1);
     uint8_t dig2 = (pArg1[1] - '0') + 8;

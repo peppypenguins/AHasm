@@ -1,6 +1,6 @@
 CMakeFiles/assembler.dir/src/ht.c.obj: \
- C:\Users\adamk\projects\AHasm\src\ht.c \
- C:/Users/adamk/projects/AHasm/include/ht.h \
+ C:\Users\adamk\OneDrive\Documents\GitHub\AHasm\src\ht.c \
+ C:/Users/adamk/OneDrive/Documents/GitHub/AHasm/include/ht.h \
  C:/msys64/mingw64/include/stdlib.h C:/msys64/mingw64/include/corecrt.h \
  C:/msys64/mingw64/include/_mingw.h \
  C:/msys64/mingw64/include/_mingw_mac.h \

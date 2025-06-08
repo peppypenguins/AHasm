@@ -977,11 +977,23 @@ char* mov(char* pArg1, char* pArg2){
     strcpy(strResult, "0xA000");
     checkRegValid(pArg1);
     checkRegValid(pArg2);
-    uint8_t dig2 = (pArg1[1] - '0');
-    uint8_t dig4 = (pArg2[1] - '0');
-    strResult[3] = toHexString(dig2);
-    strResult[5] = toHexString(dig4);
 
+    if (pArg2[0] == 'r'){ // reg version
+        uint8_t dig2 = (pArg1[1] - '0');
+        uint8_t dig4 = (pArg2[1] - '0');
+        strResult[3] = toHexString(dig2);
+        strResult[5] = toHexString(dig4);
+    } else { // imm version
+        uint8_t dig2 = (pArg1[1] - '0');
+        uint16_t imm = toNum(pArg2);
+        checkConstantValid(imm, 63, -64);
+        uint8_t dig3 = ((imm & 0x70) >> 4) + 1;
+        uint8_t dig4 = (imm & 0x0F);
+
+        strResult[3] = toHexString(dig2);
+        strResult[4] = toHexString(dig3 & 0x0F);
+        strResult[5] = toHexString(dig4 & 0x0F);
+    }
 return strResult;
 }
 
@@ -1027,7 +1039,7 @@ The pushb instruction. This function handles the stack push byte opcode.
 */
 char* pushb(char* pArg1){
     char* strResult = (char*)malloc((sizeof(char) * 7));
-    strcpy(strResult, "0xB080");
+    strcpy(strResult, "0xB010");
 
     checkRegValid(pArg1);
     uint8_t dig2 = (pArg1[1] - '0');
@@ -1055,7 +1067,7 @@ The popb function. This function handles the pop byte stack opcode
 */
 char* popb(char* pArg1){
     char* strResult = (char*)malloc((sizeof(char) * 7));
-    strcpy(strResult, "0xB080");
+    strcpy(strResult, "0xB010");
 
     checkRegValid(pArg1);
     uint8_t dig2 = (pArg1[1] - '0') + 8;

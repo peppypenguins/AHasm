@@ -980,9 +980,9 @@ char* mov(char* pArg1, char* pArg2){
 
     if (pArg2[0] == 'r'){ // reg version
         uint8_t dig2 = (pArg1[1] - '0');
-        uint8_t dig3 = (pArg2[1] - '0') << 1;
+        uint8_t dig4 = (pArg2[1] - '0');
         strResult[3] = toHexString(dig2);
-        strResult[4] = toHexString(dig3);
+        strResult[5] = toHexString(dig4);
     } else { // imm version
         uint8_t dig2 = (pArg1[1] - '0');
         uint16_t imm = toNum(pArg2);

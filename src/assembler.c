@@ -410,13 +410,13 @@ The and function, this function handles the and opcode
 */
 char* and(char* pArg1, char* pArg2, char* pArg3){
     char* strResult = (char*)malloc((sizeof(char) * 7));
-    strcpy(strResult, "0x1000");
+    strcpy(strResult, "0x2000");
 
     checkRegValid(pArg1);
     checkRegValid(pArg2);
 
     if (pArg3[0] == 'r'){
-        uint8_t dig2 = (pArg1[1] - '0');
+        uint8_t dig2 = (pArg1[1] - '0') + 0x08;
         uint8_t dig3 = ((pArg2[1] - '0') << 1);
         uint8_t dig4 = ((pArg3[1] - '0'));
 
@@ -424,7 +424,7 @@ char* and(char* pArg1, char* pArg2, char* pArg3){
         strResult[4] = toHexString(dig3);
         strResult[5] = toHexString(dig4);
     } else {
-        uint8_t dig2 = (pArg1[1] - '0');
+        uint8_t dig2 = (pArg1[1] - '0') + 0x08;
         uint8_t dig3 = ((pArg2[1] - '0') << 1) + 1;
         uint8_t dig4 = toNum(pArg3);
         checkConstantValid(dig4, 7, -8);

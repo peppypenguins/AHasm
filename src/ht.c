@@ -71,7 +71,7 @@ void* ht_get(ht* table, const char* key){
     // Loop till we find an empty entry
 
     while (table->entries[index].key != NULL){
-        if (strcmp(key, table->entries[index].key) == 0)
+        if (strcmp(key, table->entries[index].key) == 0){
             // found key return value
             return table->entries[index].value;
     }
@@ -81,6 +81,7 @@ void* ht_get(ht* table, const char* key){
             // at end of entries array, wrap around
             index = 0;
         }
+    }
     return NULL;
 }
 

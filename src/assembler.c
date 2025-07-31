@@ -1,5 +1,7 @@
 #include "assembler.h"
 
+#define MAX(x, y) ((x) > (y) ? (x) : (y))
+
 void firstPass(ht* table, FILE** input);
 void secondPass(ht* table, FILE** input, FILE** output);
 int findOrig(FILE** input, char* origStart);
@@ -109,6 +111,19 @@ void checkLabel(char* label_str){
     }
 }
 
+int add_label_increment(char* pOpcode, char* pArg1){
+    int opcode = findOpcode(pOpcode);
+    if (opcode == BLKW){
+        int blkwrd_cnt = toNum(pArg1);
+        return blkwrd_cnt * 2;
+    } else if (opcode == STRINGZ){
+        size_t str_len = strlen(pArg1);
+        return (str_len + 1) & 0xFFFE;
+    } else {
+        return 2;
+    }
+}
+
 /*
 The main function of this file, this handles the actually assembly process
 */
@@ -153,7 +168,7 @@ void firstPass(ht* table, FILE** input){
                     exit(4);
                 }
             }
-            offset += 2;
+            offset += add_label_increment(pOpcode, pArg1);
         }
     } while(lret != DONE);
     rewind(*input);

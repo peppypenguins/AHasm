@@ -1,6 +1,8 @@
 #include "fileFunctions.h"
 #include <limits.h>
 
+#define MIN(x,y) ((x < y) ? (x) : (y))
+
 extern ht* label_table; 
 
 /*
@@ -147,32 +149,46 @@ int readAndParse( FILE* pInfile, char* pLine, char** pLabel, char
 	** pOpcode, char** pArg1, char** pArg2, char** pArg3, char** pArg4
 	)
 	{
-	   char * lRet, * lPtr;
-	   int i;
-	   if( !fgets( pLine, MAX_LINE_LENGTH, pInfile ) )
-		return( DONE );
-	   for( i = 0; i < strlen( pLine ); i++ )
-		pLine[i] = tolower( pLine[i] );
+	  char * lRet, * lPtr;
+	  int i;
+	  if( !fgets( pLine, MAX_LINE_LENGTH, pInfile ) )
+	    return( DONE );
+    int line_length = strlen( pLine );
+	  for( i = 0; i < line_length; i++ ){
+      
+		  pLine[i] = tolower( pLine[i] );
+      if (pLine[i] == '.' && ((line_length - (i - 1)) > 7)){
+        ++i;
+        int j = i + 7;
+        for (i; i < j; ++i){
+          pLine[i] = tolower( pLine[i] );
+        }
+
+        char stringz_copy[9] = {0};
+        memcpy(stringz_copy, &pLine[j - 8], 8);
+        if (!strcmp(stringz_copy, ".stringz"))
+          break;
+      }
+    }
 	   
            /* convert entire line to lowercase */
-	   *pLabel = *pOpcode = *pArg1 = *pArg2 = *pArg3 = *pArg4 = pLine + strlen(pLine);
+	  *pLabel = *pOpcode = *pArg1 = *pArg2 = *pArg3 = *pArg4 = pLine + strlen(pLine);
 
-	   /* ignore the comments */
-	   lPtr = pLine;
+	  /* ignore the comments */
+	  lPtr = pLine;
 
-	   while( *lPtr != ';' && *lPtr != '\0' &&
-	   *lPtr != '\n' ) 
-		lPtr++;
+	  while( *lPtr != ';' && *lPtr != '\0' && *lPtr != '\n' ) 
+		  lPtr++;
 
-	   *lPtr = '\0';
-	   if( !(lPtr = strtok( pLine, "\t\n ," ) ) ) 
-		return( EMPTY_LINE );
+	  *lPtr = '\0';
+	  if( !(lPtr = strtok( pLine, "\t\n ," ) ) ) 
+		  return( EMPTY_LINE );
 
-	   if( isOpcode( lPtr ) == false && lPtr[0] != '.' ) /* found a label */
-	   {
-		*pLabel = lPtr;
-		if( !( lPtr = strtok( NULL, "\t\n ," ) ) ) return( OK );
-	   }
+	  if( isOpcode( lPtr ) == false && lPtr[0] != '.' ) /* found a label */
+	  {
+		  *pLabel = lPtr;
+		  if( !( lPtr = strtok( NULL, "\t\n ," ) ) ) return( OK );
+	  }
 	   
            *pOpcode = lPtr;
 

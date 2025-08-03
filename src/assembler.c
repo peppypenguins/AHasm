@@ -912,8 +912,8 @@ char* trap(char* pArg1){
     uint8_t dig3 = dig34 >> 4;
     uint8_t dig4 = dig34 & 0xF; 
 
-    strResult[3] = toHexString(dig3);
-    strResult[4] = toHexString(dig4);
+    strResult[4] = toHexString(dig3);
+    strResult[5] = toHexString(dig4);
 return strResult;
 }
 

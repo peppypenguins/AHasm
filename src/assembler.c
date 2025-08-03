@@ -526,14 +526,15 @@ char* ldb(char* pArg1, char* pArg2, char* pArg3){
     checkRegValid(pArg2);
 
     uint8_t dig4 = toNum(pArg3);
+    checkConstantValid(dig4, 31, -32);
     uint8_t dig2 = (pArg1[1] - '0');
-    uint8_t dig3 = ((pArg2[1] - '0') << 1) + ((uint8_t)(dig4)) >> 4;
+    uint8_t dig3 = ((pArg2[1] - '0') << 1) + (((uint8_t)(dig4)) >> 4);
 
     strResult[3] = toHexString(dig2);
     strResult[4] = toHexString(dig3);
     strResult[5] = toHexString(dig4 & 0x0F);
 
-return strResult;
+    return strResult;
 }
 
 /*
@@ -547,8 +548,9 @@ char* ldw(char* pArg1, char* pArg2, char* pArg3){
     checkRegValid(pArg2);
 
     uint8_t dig4 = toNum(pArg3);
+    checkConstantValid(dig4, 31, -32);
     uint8_t dig2 = (pArg1[1] - '0');
-    uint8_t dig3 = ((pArg2[1] - '0') << 1) + ((uint8_t)(dig4)) >> 4;
+    uint8_t dig3 = ((pArg2[1] - '0') << 1) + (((uint8_t)(dig4)) >> 4);
 
     strResult[3] = toHexString(dig2);
     strResult[4] = toHexString(dig3);
@@ -652,7 +654,7 @@ char* stb(char* pArg1, char* pArg2, char* pArg3){
 
     uint8_t dig4 = toNum(pArg3);
     uint8_t dig2 = (pArg1[1] - '0') + 8;
-    uint8_t dig3 = ((pArg2[1] - '0') << 1) + ((uint8_t)(dig4)) >> 4;
+    uint8_t dig3 = ((pArg2[1] - '0') << 1) + (((uint8_t)(dig4)) >> 4);
     checkConstantValid(dig4, 7, -8);
 
     strResult[3] = toHexString(dig2);
@@ -675,7 +677,7 @@ char* stw(char* pArg1, char* pArg2, char* pArg3){
 
     uint8_t dig4 = toNum(pArg3);
     uint8_t dig2 = (pArg1[1] - '0') + 8;
-    int8_t dig3 = ((pArg2[1] - '0') << 1) + ((uint8_t)(dig4)) >> 4;
+    int8_t dig3 = ((pArg2[1] - '0') << 1) + (((uint8_t)(dig4)) >> 4);
     checkConstantValid(dig4, 7, -8);
 
     strResult[3] = toHexString(dig2);
@@ -776,6 +778,8 @@ char* jmp(char* pArg1){
     strResult[4] = toHexString(dig3);
 return strResult;
 }
+
+
 char* jsr(char* pArg1, ht* table, int location){
     char* strResult = (char*)malloc((sizeof(char) * 7));
     strcpy(strResult, "0x2000");
